@@ -1,4 +1,9 @@
 export const fetchCountries = (name) => {
-    fetch('https://restcountries.com/v2/all?{name},name.official,capital,population,flags.svg,languages')
-        .then(r => console.log(r)).catch(error => console.log(error));
-};
+    fetch(`https://restcountries.com/v2/name/${name}?oficial,capital,population,flags.svg,languages`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        });
+    }
