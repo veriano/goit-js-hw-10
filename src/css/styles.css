@@ -26,3 +26,7 @@ body {
 .country-list {
   list-style: none;
 }
+.field {
+  font-size: 25px;
+  color:blue;
+}
